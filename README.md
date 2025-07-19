@@ -3,7 +3,8 @@ A Flask web app to manage student details with full **CRUD** operations. Users c
 
 You can create virtual environment :- 
   Use this commands to install virtual environment :-
-    pip install virtualenv virtaulenv env
+    pip install virtualenv,
+    virtaulenv env
 
 Now activating virtaul enviornment :- 
   Use this command to activate :-
