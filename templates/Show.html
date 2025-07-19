@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %} Show {% endblock title %}
+{% block body %}
+
+<table class="table table-striped">
+    <h1>Student Details</h1>
+    <thead>
+      <tr>
+        <th scope="col">S No.</th>
+        <th scope="col">Roll No.</th>
+        <th scope="col">Name</th>
+        <th scope="col">Gender</th>
+        <th scope="col">Class</th>
+        <th scope="col">Grade</th>
+        <th scope="col">Contact</th>
+        <th scope="col">Actions</th>
+      </tr>
+    </thead>
+    {%if allDetails|length == 0 %}
+        <div class="alert alert-info" role="alert">
+            No Info Available, Add your first Student now!
+          </div>
+    {% else%}
+    <tbody>
+        {% for details in allDetails %}
+       
+      <tr>
+        <th scope="row">{{ loop.index }}</th>
+        <th scope="row">{{ details.rno }}</th>
+        <td>{{ details.name }}</td>
+        <td>{{ details.gender }}</td>
+        <td>{{ details.class }}</td>
+        <td>{{ details.grade}}</td>
+        <td>{{ details.contact}}</td>
+        <td><a href="/update/{{ details.rno }}" type="button" class="btn btn-info">Edit</button></a>
+            <a href="/delete/{{ details.rno }}" type="button" class="btn btn-info">Delete</button></a>
+      </tr>
+      {% endfor %}
+      {% endif %}
+
+    </tbody>
+  </table>
+
+{% endblock body %}
